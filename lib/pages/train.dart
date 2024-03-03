@@ -15,11 +15,7 @@ class _TrainPageState extends State<TrainPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Видео'),
-        centerTitle: true,
-        toolbarHeight: 120,
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
           Container(

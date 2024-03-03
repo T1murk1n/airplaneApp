@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/background.png"),
+                image: AssetImage("images/back.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -31,22 +31,22 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('Приложение по тушению пожаров', style: titleText,),
-                      const SizedBox(height: 100),
+                      Text('Система пожаротушения SSJ -100', style: TextStyle( fontSize: 54, fontWeight: FontWeight.w600,fontFamily: 'Roboto',color: Colors.white,),),
+                      const SizedBox(height: 60),
                       OutlinedButton(
                         onPressed: () {
                           Navigator.pushNamed(context, '/video');
                         },
                         style: mainButton,
-                        child: Text('Теория', style: textButton),
+                        child: Text('Демонстрация', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/video');
+                          Navigator.pushNamed(context, '/sub_menu');
                         },
                         style: mainButton,
-                        child: Text('Тестирование', style: textButton),
+                        child: Text('Видео по шагам', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
@@ -54,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/train');
                         },
                         style: mainButton,
-                        child: Text('Тренажер', style: textButton),
+                        child: Text('Демонстрация по шагам', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
@@ -62,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/video');
                         },
                         style: mainButton,
-                        child: Text('Рандом', style: textButton),
+                        child: Text('Случайное возгарание', style: textButton),
                       ),
                     ],
                   ),

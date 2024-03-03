@@ -26,14 +26,14 @@ final text = TextStyle(
 );
 
 final textButton = TextStyle(
-  fontSize: 24,
+  fontSize: 34,
   fontWeight: FontWeight.w600,
   fontFamily: 'Roboto',
   color: Colors.white,
 );
 
 final mainButton = OutlinedButton.styleFrom(
-  minimumSize: Size(400, 80),
+  minimumSize: Size(600, 105),
   side: BorderSide(color: Colors.white, width: 3),
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(28.0),
