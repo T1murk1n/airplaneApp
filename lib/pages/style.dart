@@ -11,6 +11,7 @@ final buttonStyle = ButtonStyle(
 );
 
 final titleText = TextStyle(
+
   fontSize: 32,
   fontWeight: FontWeight.w600,
   fontFamily: 'Roboto',
