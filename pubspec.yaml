@@ -67,6 +67,18 @@ flutter:
     - assets/video/X-System.mp4
     - assets/images/background.png
     - assets/images/back.png
+    - assets/images/le1.jpg
+    - assets/images/le2.jpg
+    - assets/images/le3.jpg
+    - assets/images/fb1.jpg
+    - assets/images/fb2.jpg
+    - assets/images/re1.jpg
+    - assets/images/re2.jpg
+    - assets/images/re3.jpg
+    - assets/images/sb1.jpg
+    - assets/images/sb2.jpg
+    - assets/images/vsu1.jpg
+    - assets/images/vsu2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

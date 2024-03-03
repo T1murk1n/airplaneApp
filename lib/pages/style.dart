@@ -33,7 +33,13 @@ final textButton = TextStyle(
 );
 
 final mainButton = OutlinedButton.styleFrom(
-  minimumSize: Size(600, 105),
+  minimumSize: Size(640, 105),
+  side: BorderSide(color: Colors.white, width: 3),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(28.0),
+  ),
+);
+final usualButton =  OutlinedButton.styleFrom(
   side: BorderSide(color: Colors.white, width: 3),
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(28.0),

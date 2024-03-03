@@ -38,28 +38,28 @@ class _SubMenuState extends State<SubMenu> {
                           Navigator.pushNamed(context, '/left_engine');
                         },
                         style: mainButton,
-                        child: Text('пожар левого двигателя', style: textButton),
+                        child: Text('Пожар левого двигателя', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/video');
+                          Navigator.pushNamed(context, '/fb');
                         },
                         style: mainButton,
-                        child: Text('пожар переднего багажного отсека', style: textButton),
+                        child: Text('Пожар переднего багажного отсека', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/train');
+                          Navigator.pushNamed(context, '/sb');
                         },
                         style: mainButton,
-                        child: Text('пожар заднего багажного отсека', style: textButton),
+                        child: Text('Пожар заднего багажного отсека', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/video');
+                          Navigator.pushNamed(context, '/vsu');
                         },
                         style: mainButton,
                         child: Text('пожар ВСУ', style: textButton),
@@ -67,7 +67,7 @@ class _SubMenuState extends State<SubMenu> {
                       const SizedBox(height: 30),
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/video');
+                          Navigator.pushNamed(context, '/right_engine');
                         },
                         style: mainButton,
                         child: Text('Пожар правого двигателя', style: textButton),

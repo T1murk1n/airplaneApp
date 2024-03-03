@@ -3,18 +3,15 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fly/pages/style.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Situation extends StatefulWidget {
-const Situation({super.key});
+class LE extends StatefulWidget {
+const LE({super.key});
 
 @override
-State<Situation> createState() => _SituationState();
+State<LE> createState() => _LEState();
 }
-dynamic arrSituation = ['Студент-первокурсник на практике изучал компьютерную томограмму позвоночника и заметил, что позвоночные отверстия в шейном и поясничном отделах крупнее, чем в грудном. Как бы вы объяснили данный феномен?',
-'В шейном и поясничном отделах толще спинной мозг, так как здесь от него отходят нервы к руке и ноге. В соответствии с толщиной спинного будут толще и позвоночные отверстия',
-'В шейном и поясничном отделах толще спинной мозг, так как здесь от него отходят нервы к руке и ноге. В соответствии с толщиной спинного будут толще и позвоночные отверстия',
-'Что делать, если ничего делать не хочется'];
+dynamic arr = ["le1.jpg", "le2.jpg", "le3.jpg"];
 
-class _SituationState extends State<Situation> {
+class _LEState extends State<LE> {
 final controller = CarouselController();
 int currentIndex = 0;
 @override
@@ -23,6 +20,14 @@ return Scaffold(
 
 body:  Stack(
   children: [
+    Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/back.png"),
+          fit: BoxFit.fill,
+        ),
+      ),
+    ),
     Padding(
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
@@ -31,7 +36,7 @@ body:  Stack(
           children: [
             buildIndicator(),
             CarouselSlider.builder(
-              itemCount: arrSituation.length,
+              itemCount: arr.length,
               itemBuilder: (context, index, realIndex) {
                 //final item = arrSituation[index];
 
@@ -41,7 +46,7 @@ body:  Stack(
               options: CarouselOptions(
                   height: 620,
                   initialPage: 0,
-                  viewportFraction: 1,
+                  viewportFraction: 0.8,
                   enableInfiniteScroll: false,
                   enlargeCenterPage: true,
                   onPageChanged: (index, reason) {
@@ -55,7 +60,6 @@ body:  Stack(
             ),
             SizedBox(height: 12,),
             buildButtons(),
-
           ],
         ),
       ),
@@ -82,48 +86,60 @@ body:  Stack(
 );
 }
 
-Widget buildIndicator() => AnimatedSmoothIndicator(
-activeIndex: currentIndex,
-count: arrSituation.length,
-onDotClicked: animateToSlide,
-effect: SlideEffect(
-dotWidth: MediaQuery.of(context).size.width / (arrSituation.length+1),
-dotHeight: 12,
-activeDotColor: Colors.deepOrangeAccent,
-dotColor: Colors.grey.shade200
-),
+Widget buildIndicator() => Padding(
+  padding: const EdgeInsets.only(bottom: 16.0),
+  child: AnimatedSmoothIndicator(
+  activeIndex: currentIndex,
+  count: arr.length,
+  onDotClicked: animateToSlide,
+  effect: SlideEffect(
+  dotWidth: MediaQuery.of(context).size.width / (arr.length+4),
+  dotHeight: 22,
+  activeDotColor: Colors.white,
+  dotColor: Colors.white54
+  ),
+  ),
 );
 
-Widget buildButtons({bool stretch = false}) => Column(
-mainAxisAlignment: MainAxisAlignment.spaceAround,
+Widget buildButtons({bool stretch = false}) => Row(
+mainAxisAlignment: MainAxisAlignment.center,
 children: [
-Container(
-width: double.infinity,
-child: ElevatedButton(
-style: ElevatedButton.styleFrom(
-backgroundColor: currentIndex == arrSituation.length-1 ? Colors.grey : Colors.deepOrangeAccent
-),
-onPressed: next,
-child: Padding(
-padding: const EdgeInsets.all(8.0),
-child: Text('Далее', style: TextStyle(color: Colors.white, fontSize: 18),),
-),
-),
-),
-SizedBox(height: 18,),
-Container(
-width: double.infinity,
-child: ElevatedButton(
-style: ElevatedButton.styleFrom(
-backgroundColor: currentIndex == 0 ? Colors.grey : Colors.deepOrangeAccent,
-),
-onPressed: previous,
-child: Padding(
-padding: const EdgeInsets.all(8.0),
-child: Text('Предыдущий', style: TextStyle(color: Colors.white, fontSize: 18),),
-),
-),
-),
+  Container(
+    width: 350,
+    child: OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: currentIndex == 0 ? Colors.white54 : Colors.transparent,
+        side: BorderSide(color: Colors.white, width: 3),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(28.0),
+        ),
+      ),
+      onPressed: previous,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text('Предыдущий', style: textButton),
+      ),
+    ),
+  ),
+SizedBox(width: 40,),
+  Container(
+    width: 350,
+    child: OutlinedButton(
+      onPressed: next,
+      style: OutlinedButton.styleFrom(
+        backgroundColor: currentIndex == arr.length-1 ? Colors.white54 : Colors.transparent,
+        side: BorderSide(color: Colors.white, width: 3),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(28.0),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text('Далее', style: textButton),
+      ),
+    ),
+  ),
+
 ],
 );
 void next() {
@@ -135,11 +151,6 @@ controller.previousPage();
 void animateToSlide(int index) => controller.animateToPage(index);
 
 Widget buildText(int index) => Container(
-child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
-children: [
-Text(arrSituation[index], style: TextStyle(fontSize: 20),),
-],
-),
-);
+    child: Image(image: AssetImage("assets/images/${arr[index]}"),)
+  );
 }
