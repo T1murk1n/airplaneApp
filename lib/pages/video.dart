@@ -21,34 +21,15 @@ class _VideoPageState extends State<VideoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Видео'),
+        title: const Text('Система пожаротушения SSJ -100'),
         centerTitle: true,
-        toolbarHeight: 120,
+        toolbarHeight: 100,
       ),
-      body: Stack(
-        children: [
-          Container(
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage("images/background.png"),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Center(
-            child: ConstrainedBox(
-                constraints: BoxConstraints.tightFor(width: 1000),
-              child: Container(
-                color: Colors.white,
-              ),
-            ),
-          ),
+      body:
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(top: 100.0, bottom: 16.0, left: 20, right: 20),
-              child: ConstrainedBox(
-                constraints: BoxConstraints.tightFor(width: 800),
-                child: ListView.builder(
+              padding: const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 0, right: 0),
+              child: ListView.builder(
                     itemCount: videos.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Column(
@@ -62,11 +43,8 @@ class _VideoPageState extends State<VideoPage> {
                       );
                     }
                 ),
-              ),
             ),
           ),
-        ],
-      ),
     );
   }
 }
