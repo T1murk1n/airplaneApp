@@ -23,7 +23,7 @@ class _VSUState extends State<VSU> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/back.png"),
+                image: AssetImage("assets/images/back.png"),
                 fit: BoxFit.fill,
               ),
             ),

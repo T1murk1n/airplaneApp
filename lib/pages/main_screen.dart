@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/back.png"),
+                image: AssetImage("assets/images/back.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/sub_menu');
                         },
                         style: mainButton,
-                        child: Text('Видео по шагам', style: textButton),
+                        child: Text('Демонстрация по шагам', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
@@ -54,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/train');
                         },
                         style: mainButton,
-                        child: Text('Демонстрация по шагам', style: textButton),
+                        child: Text('Тренажёр', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(

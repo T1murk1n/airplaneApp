@@ -23,7 +23,7 @@ class _FBState extends State<FB> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/back.png"),
+                image: AssetImage("assets/images/back.png"),
                 fit: BoxFit.fill,
               ),
             ),

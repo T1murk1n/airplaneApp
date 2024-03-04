@@ -23,7 +23,7 @@ class _SBState extends State<SB> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/back.png"),
+                image: AssetImage("assets/images/back.png"),
                 fit: BoxFit.fill,
               ),
             ),

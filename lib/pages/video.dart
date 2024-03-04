@@ -11,13 +11,20 @@ class VideoPage extends StatefulWidget {
 }
 
 class _VideoPageState extends State<VideoPage> {
+  late FlickManager flickManager;
   @override
+  void initState() {
+    super.initState();
 
-  List<FlickManager> videos = [
-    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/X-System.mp4',),),
-  ];
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset("assets/images/vid.mp4",));
+  }
+  @override
+  void dispose() {
+    flickManager.dispose();
+    super.dispose();
+  }
 
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:
@@ -26,20 +33,11 @@ class _VideoPageState extends State<VideoPage> {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 0, right: 0),
-                      child: ListView.builder(
-                          itemCount: videos.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Column(
-                              children: [
+                      child:
                                 AspectRatio(
                                   aspectRatio: 16/9,
-                                  child: FlickVideoPlayer(flickManager: videos[index]),
+                                  child: FlickVideoPlayer(flickManager: flickManager),
                                 ),
-                                const SizedBox(height: 25,)
-                              ],
-                            );
-                          }
-                      ),
                     ),
                   ),
                   Padding(
@@ -49,7 +47,7 @@ class _VideoPageState extends State<VideoPage> {
                         Navigator.pop(context);
                       },
                       style: ButtonStyle(
-                          padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                          padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular((20))

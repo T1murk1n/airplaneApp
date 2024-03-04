@@ -17,7 +17,7 @@ class _SubMenuState extends State<SubMenu> {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/back.png"),
+                  image: AssetImage("assets/images/back.png"),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -27,52 +27,54 @@ class _SubMenuState extends State<SubMenu> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('Выберите модель возгарания:', style: TextStyle( fontSize: 54, fontWeight: FontWeight.w600,fontFamily: 'Roboto',color: Colors.white,),),
-                      const SizedBox(height: 60),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/left_engine');
-                        },
-                        style: mainButton,
-                        child: Text('Пожар левого двигателя', style: textButton),
-                      ),
-                      const SizedBox(height: 30),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/fb');
-                        },
-                        style: mainButton,
-                        child: Text('Пожар переднего багажного отсека', style: textButton),
-                      ),
-                      const SizedBox(height: 30),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/sb');
-                        },
-                        style: mainButton,
-                        child: Text('Пожар заднего багажного отсека', style: textButton),
-                      ),
-                      const SizedBox(height: 30),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/vsu');
-                        },
-                        style: mainButton,
-                        child: Text('пожар ВСУ', style: textButton),
-                      ),
-                      const SizedBox(height: 30),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/right_engine');
-                        },
-                        style: mainButton,
-                        child: Text('Пожар правого двигателя', style: textButton),
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text('Выберите модель возгарания:', style: TextStyle( fontSize: 54, fontWeight: FontWeight.w600,fontFamily: 'Roboto',color: Colors.white,),),
+                        const SizedBox(height: 60),
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/left_engine');
+                          },
+                          style: mainButton,
+                          child: Text('Пожар левого двигателя', style: textButton),
+                        ),
+                        const SizedBox(height: 30),
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/fb');
+                          },
+                          style: mainButton,
+                          child: Text('Пожар переднего багажного отсека', style: textButton),
+                        ),
+                        const SizedBox(height: 30),
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/sb');
+                          },
+                          style: mainButton,
+                          child: Text('Пожар заднего багажного отсека', style: textButton),
+                        ),
+                        const SizedBox(height: 30),
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/vsu');
+                          },
+                          style: mainButton,
+                          child: Text('пожар ВСУ', style: textButton),
+                        ),
+                        const SizedBox(height: 30),
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/right_engine');
+                          },
+                          style: mainButton,
+                          child: Text('Пожар правого двигателя', style: textButton),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
