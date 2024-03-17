@@ -14,7 +14,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: '/main',
     routes: {
-      '/video': (context) => const VideoPage(),
+      '/video': (context) => MyVideoPlayer(),
       '/main': (context) => const MainScreen(),
       '/train': (context) => const TrainPage(),
       '/sub_menu': (context) => const SubMenu(),

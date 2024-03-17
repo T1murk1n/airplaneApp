@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('Система пожаротушения SSJ -100', style: TextStyle( fontSize: 54, fontWeight: FontWeight.w600,fontFamily: 'Roboto',color: Colors.white,),),
+                      Text('Система пожаротушения SSJ - 100', style: TextStyle( fontSize: 54, fontWeight: FontWeight.w600,fontFamily: 'Roboto',color: Colors.white,),),
                       const SizedBox(height: 60),
                       OutlinedButton(
                         onPressed: () {
@@ -54,15 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/train');
                         },
                         style: mainButton,
-                        child: Text('Тренажёр', style: textButton),
-                      ),
-                      const SizedBox(height: 30),
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/video');
-                        },
-                        style: mainButton,
-                        child: Text('Случайное возгарание', style: textButton),
+                        child: Text('Лекции', style: textButton),
                       ),
                     ],
                   ),

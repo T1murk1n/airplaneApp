@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: '>=3.2.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -28,12 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  video_player: ^2.5.1
+  path_provider: ^2.0.11
+  video_player_win:
+      git:
+        url: https://github.com/jakky1/video_player_win.git
+        ref: master
   flick_video_player: ^0.5.0
   carousel_slider: ^4.0.0
   smooth_page_indicator: ^1.1.0
   flutter:
     sdk: flutter
+  video_player: ^2.1.10
+  chewie: ^1.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,8 +70,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/video/vid.mp4
-    - assets/video/video.mp4
     - assets/images/background.png
     - assets/images/back.png
     - assets/images/le1.jpg
@@ -80,6 +84,7 @@ flutter:
     - assets/images/sb2.jpg
     - assets/images/vsu1.jpg
     - assets/images/vsu2.jpg
+    - assets/video/video.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
