@@ -40,6 +40,7 @@ dependencies:
     sdk: flutter
   video_player: ^2.1.10
   chewie: ^1.2.2
+  webview_flutter: ^2.0.13
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -72,19 +73,32 @@ flutter:
   assets:
     - assets/images/background.png
     - assets/images/back.png
-    - assets/images/le1.jpg
-    - assets/images/le2.jpg
-    - assets/images/le3.jpg
-    - assets/images/fb1.jpg
-    - assets/images/fb2.jpg
-    - assets/images/re1.jpg
-    - assets/images/re2.jpg
-    - assets/images/re3.jpg
-    - assets/images/sb1.jpg
-    - assets/images/sb2.jpg
-    - assets/images/vsu1.jpg
-    - assets/images/vsu2.jpg
-    - assets/video/video.mp4
+    - assets/images/e1.jpg
+    - assets/images/e2.jpg
+    - assets/images/e3.jpg
+    - assets/images/e4.jpg
+    - assets/images/e5.jpg
+    - assets/images/e6.jpg
+    - assets/images/e7.jpg
+    - assets/images/e8.jpg
+    - assets/images/e9.jpg
+    - assets/images/e10.jpg
+    - assets/images/e11.jpg
+    - assets/images/e12.jpg
+    - assets/images/e13.jpg
+    - assets/images/b1.jpg
+    - assets/images/b2.jpg
+    - assets/images/b3.jpg
+    - assets/images/b4.jpg
+    - assets/images/b5.jpg
+    - assets/images/b6.jpg
+    - assets/images/b7.jpg
+    - assets/images/b8.jpg
+    - assets/images/vs1.jpg
+    - assets/images/vs2.jpg
+    - assets/images/vs3.jpg
+    - assets/images/vs4.jpg
+    - assets/images/vs5.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,10 +1,9 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:video_player/video_player.dart';
 import 'package:fly/pages/style.dart';
 
 import 'package:video_player_win/video_player_win.dart';
-import 'package:video_player/video_player.dart';
 import 'dart:io';
 import 'dart:developer';
 
@@ -20,9 +19,8 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
  late FlickManager flickManager;
  late VideoPlayerController controller;
- //var controller = VideoPlayerController.network("https://www.your-web.com/sample.mp4");
   @override
-  void initState() {
+  /*void initState() {
     /*Process.run('E:\\K-Lite_Codec_Pack_1730_Basic.exe', ['/silent']).then((value) {
       if (value.exitCode == 0) log("installation success");
       else log("installation failed");
@@ -39,12 +37,11 @@ class _VideoPageState extends State<VideoPage> {
     super.initState();
 
     flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video.mp4',));
-  }
+  }*/
 
- /*void initState() {
+ void initState() {
    super.initState();
-   //controller = VideoPlayerController.file(File("C:\\video.mp4"));
-   controller = VideoPlayerController.asset("assets/video/video.mp4");
+   controller = VideoPlayerController.file(File("C:\\video.mp4"));
    controller.initialize().then((value) {
      if (controller.value.isInitialized) {
 
@@ -54,23 +51,23 @@ class _VideoPageState extends State<VideoPage> {
        log("video file load failed");
      }
    });
- }*/
+ }
   @override
-  void dispose() {
+  /*void dispose() {
     flickManager.dispose();
     super.dispose();
-  }
- /*void dispose() {
+  }*/
+ void dispose() {
    super.dispose();
    controller.dispose();
- }*/
+ }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:
       
-      /*Stack(
+      Stack(
           children: [
         VideoPlayer(controller),
         Positioned(
@@ -81,12 +78,42 @@ class _VideoPageState extends State<VideoPage> {
                 builder: ((context, value, child) {
                   int minute = controller.value.position.inMinutes;
                   int second = controller.value.position.inSeconds % 60;
-                  return Text("$minute:$second", style: Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white, backgroundColor: Colors.black54));
+                  return Text("$minute:$second/8:13", style: Theme.of(context).textTheme.headline6!.copyWith(color: Colors.white, backgroundColor: Colors.black54));
                 }),
               ),
-              ElevatedButton(onPressed: () => controller.play(), child: const Text("Play")),
-              ElevatedButton(onPressed: () => controller.pause(), child: const Text("Pause")),
-              ElevatedButton(onPressed: () => controller.seekTo(Duration(milliseconds: controller.value.position.inMilliseconds+ 10*1000)), child: const Text("Forward")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+              OutlinedButton(
+                        onPressed: () => controller.play(),
+                        style: usualButton,
+                        child: Text('Запустить', style: text),
+                      ),
+              const SizedBox(width: 12,),
+              OutlinedButton(
+                onPressed: () => controller.pause(),
+                style: usualButton,
+                child: Text('Пауза', style: text),
+              ),
+              const SizedBox(width: 12,),
+              OutlinedButton(
+                onPressed: () => controller.seekTo(Duration(milliseconds: controller.value.position.inMilliseconds+ 10*1000)),
+                style: usualButton,
+                child: Text('Перемотать вперед', style: text),
+              ),
+              const SizedBox(width: 12,),
+              OutlinedButton(
+                onPressed: () => controller.seekTo(Duration(milliseconds: controller.value.position.inMilliseconds-10*1000)),
+                style: usualButton,
+                child: Text('Перемотать назад', style: text),
+              ),
+                ],
+              ),
+            const SizedBox(height: 12,),
+              
+
+
             ])
         ),
             Padding(
@@ -108,9 +135,9 @@ class _VideoPageState extends State<VideoPage> {
             ),
       ]
       ),
-*/
 
 
+/*
 
       Stack(
                 children: [
@@ -144,94 +171,9 @@ class _VideoPageState extends State<VideoPage> {
                 ],
               ),
 
+*/
 
 
-
-    );
-  }
-}
-*/import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-import 'package:chewie/chewie.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      
-    debugShowCheckedModeBanner: false,
-      title: 'Video Player Demo',
-      home: MyVideoPlayer(),
-    );
-  }
-}
-
-class MyVideoPlayer extends StatefulWidget {
-  @override
-  _MyVideoPlayerState createState() => _MyVideoPlayerState();
-}
-
-class _MyVideoPlayerState extends State<MyVideoPlayer> {
-  late VideoPlayerController _videoPlayerController;
-  late ChewieController _chewieController;
-
-  @override
-  void initState() {
-    super.initState();
-    _videoPlayerController = VideoPlayerController.network(
-      //'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-      'https://disk.yandex.ru/client/disk?idApp=client&dialog=slider&idDialog=%2Fdisk%2FОбучающий%202.mp4'
-    );
-    _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController,
-      autoPlay: true,
-      looping: true,
-      aspectRatio: 16 / 9, // Adjust as per your video's aspect ratio
-      // Add other customization options here as needed
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _videoPlayerController.dispose();
-    _chewieController.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: 
-      Stack(
-        children:
-        [ Center(
-          child: Chewie(
-            controller: _chewieController,
-          ),
-        ),
- Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      style: ButtonStyle(
-                          padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular((20))
-                              )
-                          )
-                      ),
-                      child: Text('Назад'),
-                    ),
-                  ),
-        ]
-      ),
     );
   }
 }

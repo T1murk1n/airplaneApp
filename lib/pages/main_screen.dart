@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/video');
                         },
                         style: mainButton,
-                        child: Text('Демонстрация', style: textButton),
+                        child: Text('Видео', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/sub_menu');
                         },
                         style: mainButton,
-                        child: Text('Демонстрация по шагам', style: textButton),
+                        child: Text('Описание', style: textButton),
                       ),
                       const SizedBox(height: 30),
                       OutlinedButton(
@@ -54,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                           Navigator.pushNamed(context, '/train');
                         },
                         style: mainButton,
-                        child: Text('Лекции', style: textButton),
+                        child: Text('Лекция', style: textButton),
                       ),
                     ],
                   ),

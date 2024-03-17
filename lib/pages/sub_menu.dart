@@ -39,23 +39,7 @@ class _SubMenuState extends State<SubMenu> {
                             Navigator.pushNamed(context, '/left_engine');
                           },
                           style: mainButton,
-                          child: Text('Пожар левого двигателя', style: textButton),
-                        ),
-                        const SizedBox(height: 30),
-                        OutlinedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/fb');
-                          },
-                          style: mainButton,
-                          child: Text('Пожар переднего багажного отсека', style: textButton),
-                        ),
-                        const SizedBox(height: 30),
-                        OutlinedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/sb');
-                          },
-                          style: mainButton,
-                          child: Text('Пожар заднего багажного отсека', style: textButton),
+                          child: Text('Маршевые двигатели', style: textButton),
                         ),
                         const SizedBox(height: 30),
                         OutlinedButton(
@@ -63,16 +47,17 @@ class _SubMenuState extends State<SubMenu> {
                             Navigator.pushNamed(context, '/vsu');
                           },
                           style: mainButton,
-                          child: Text('пожар ВСУ', style: textButton),
+                          child: Text('Вспомогательная силовая установка', style: textButton),
                         ),
                         const SizedBox(height: 30),
                         OutlinedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/right_engine');
+                            Navigator.pushNamed(context, '/sb');
                           },
                           style: mainButton,
-                          child: Text('Пожар правого двигателя', style: textButton),
+                          child: Text('Багажно-грузовые отсеки', style: textButton),
                         ),
+                        
                       ],
                     ),
                   ),

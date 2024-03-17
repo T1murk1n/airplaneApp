@@ -9,7 +9,7 @@ class VSU extends StatefulWidget {
   @override
   State<VSU> createState() => _VSUState();
 }
-dynamic arr = ["vsu1.jpg", "vsu2.jpg"];
+dynamic arr = ["vs1.jpg", "vs2.jpg","vs3.jpg", "vs4.jpg","vs5.jpg"];
 
 class _VSUState extends State<VSU> {
   final controller = CarouselController();

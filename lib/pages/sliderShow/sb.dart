@@ -9,7 +9,7 @@ class SB extends StatefulWidget {
   @override
   State<SB> createState() => _SBState();
 }
-dynamic arr = ["sb1.jpg", "sb2.jpg"];
+dynamic arr = ["b1.jpg", "b2.jpg","b3.jpg", "b4.jpg","b5.jpg", "b6.jpg","b7.jpg", "b8.jpg",];
 
 class _SBState extends State<SB> {
   final controller = CarouselController();

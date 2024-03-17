@@ -9,7 +9,7 @@ const LE({super.key});
 @override
 State<LE> createState() => _LEState();
 }
-dynamic arr = ["le1.jpg", "le2.jpg", "le3.jpg"];
+dynamic arr = ["e1.jpg", "e2.jpg", "e3.jpg","e4.jpg", "e5.jpg", "e6.jpg","e7.jpg", "e8.jpg", "e9.jpg","e10.jpg", "e11.jpg", "e12.jpg","e13.jpg",];
 
 class _LEState extends State<LE> {
 final controller = CarouselController();
